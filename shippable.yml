@@ -6,6 +6,13 @@ resources:
       sourceName: shippable/x86_64.macOS_10.12.prep
       branch: master
 
+  - name: mac10_reqProc_repo
+    type: gitRepo
+    integration: avinci_gh
+    pointer:
+      sourceName: shippable/reqProc
+      branch: master
+
   - name: mac10_bits_ecr_cli
     type: cliConfig
     integration: ecr_bits_push
@@ -66,7 +73,7 @@ jobs:
         switch: off
       - IN: mac10_dh_cli
         switch: off
-      - IN: reqProc_repo
+      - IN: mac10_reqProc_repo
       - IN: reqExec_x86_64_Ubuntu_14_04_pack
       - IN: reqExec_x86_64_Ubuntu_16_04_pack
       - IN: reqExec_x86_64_CentOS_7_pack
@@ -76,6 +83,6 @@ jobs:
       - IN: microbase_img
       - TASK:
           script:
-            - pushd $(shipctl get_resource_state "reqProc_repo")
+            - pushd $(shipctl get_resource_state "mac10_reqProc_repo")
             - ./build.sh x86_64 macOS_10.12 drydock m10reqproc
             - popd
