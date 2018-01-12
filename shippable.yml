@@ -49,8 +49,7 @@ jobs:
     triggerMode: parallel
     dependencyMode: strict
     runtime:
-      architecture: x86_64
-      os: macOS_10.12
+      cluster: x86_m10_cus_01
       container: false
     steps:
       - IN: x86_64_macOS_10_12_prep_repo
@@ -70,8 +69,7 @@ jobs:
     triggerMode: parallel
     dependencyMode: strict
     runtime:
-      architecture: x86_64
-      os: macOS_10.12
+      cluster: x86_m10_cus_01
       container: false
     steps:
       - IN: mac10_bits_ecr_cli
