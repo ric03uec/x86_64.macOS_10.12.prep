@@ -49,7 +49,7 @@ jobs:
     triggerMode: parallel
     dependencyMode: strict
     runtime:
-      cluster: x86_m10_cus_01
+      nodePool: x86_m10_cus_01
       container: false
     steps:
       - IN: x86_64_macOS_10_12_prep_repo
@@ -69,7 +69,7 @@ jobs:
     triggerMode: parallel
     dependencyMode: strict
     runtime:
-      cluster: x86_m10_cus_01
+      nodePool: x86_m10_cus_01
       container: false
     steps:
       - IN: mac10_bits_ecr_cli
